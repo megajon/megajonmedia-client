@@ -21,13 +21,6 @@
     background: rgb(30, 28, 28);
     color: white;
   }
-  
-  #megajon-logo {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    width: 30%;
-  }
 
   #main-nav ul {
     display: inline-block;
@@ -134,14 +127,76 @@
 }
 
 @media only screen and (min-device-width: 768px) {
+  body {
+    background-color: white;
+    margin: 0;
+  }
+
+  h3 {
+    position: relative;
+    top: 8px;
+    /* margin: 0;
+    padding-left: 2px; */
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-nav {
+    background-color: #e9ebee;
+  }
+
   #main-content {
-    background-color: black;
+    position: relative;
+    top: 50px;
+    text-align: center;
+  }
+
+  .comedy-set {
+    display: inline-block;
+    color: black;
+    background-color: #e9ebee;
+    margin: 20px;
+    padding: 32px 0px 32px 0px;
+    width: 40%;
+    border-radius: 2%;
   }
 }
 
-@media only screen and (min-device-width: 1200px) {
-  #main-content {
-    background-color: #e9ebee;
+/* @media only screen and (min-device-width: 1200px) {
+  body {
+    background-color: white;
+    margin: 0;
   }
-}
+
+  h3 {
+    margin: 0;
+    padding-left: 8px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-nav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: #e9ebee;
+    color: black;
+  }
+
+  .comedy-set {
+    width: 96%;
+    padding: 12px 0px 12px 0px;
+    margin: 10px auto 0px auto;
+    color: black;
+    background-color: #e9ebee;
+    border-radius: 1%;
+  }
+
+} */
 

@@ -30,33 +30,36 @@ export default function Home() {
           {/* <p id="megajon-logo">Megajon Media</p> */}
           <ul id="main-nav__icons">
             <li className="main-nav__icon">
-              <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA">
+              <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA" target="_blank">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/yt_icon_rgb.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.instagram.com/megajonrules/">
+              <a href="https://www.instagram.com/megajonrules/" target="_blank">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/Instagram_Glyph_Gradient.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.facebook.com/megajonrules/">
+              <a href="https://www.facebook.com/megajonrules/" target="_blank">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/f_logo_RGB-Blue_1024.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://twitter.com/megajonrules">
+              <a href="https://twitter.com/megajonrules" target="_blank">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/2021+Twitter+logo+-+blue.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.linkedin.com/in/jonathan-seubert/">
+              <a href="https://www.linkedin.com/in/jonathan-seubert/" target="_blank">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/linkedin.png" />
               </a>
             </li>
-            <li className="main-nav__icon">
-              <a href="https://github.com/megajon">
-              <img src="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
+            <li id="github-icon" className="main-nav__icon">
+              <a href="https://github.com/megajon" target="_blank">
+                <picture>
+                  <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 768px)' />
+                  <img srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
+                </picture>
               </a>
             </li>
              {/* <li className="main-nav__icon">
@@ -71,16 +74,16 @@ export default function Home() {
         <div id="main-nav-backing"></div>
         <div id="main-content">
           <div className="comedy-set">
+            <video className="video"  poster="https://megajon-web.s3.amazonaws.com/images/trails_end_img.png" controls>
+              <source src="https://megajon-web.s3.amazonaws.com/videos/Trails+End+Golf+Center+-+8-6-2022.m4v" type="video/mp4" />
+            </video>
+            <h3>Facial Recognition, Black Bradley Cooper, Tiger Woods</h3>
+          </div>
+          <div className="comedy-set">
             <video className="video" poster="https://megajon-web.s3.amazonaws.com/images/east_side_1_img.png" controls>
               <source src="https://megajon-web.s3.amazonaws.com/videos/Eastside+Bar+And+Grill+-+8-23-2022.m4v" type="video/mp4" />
             </video>
             <h3>Mommy Hoarder, Weird Uber Deliveries</h3>
-          </div>
-          <div className="comedy-set">
-            <video className="video" poster="https://megajon-web.s3.amazonaws.com/images/trails_end_img.png" controls>
-              <source src="https://megajon-web.s3.amazonaws.com/videos/Trails+End+Golf+Center+-+8-6-2022.m4v" type="video/mp4" />
-            </video>
-            <h3>Facial Recognition, Black Bradley Cooper, Tiger Woods</h3>
           </div>
         </div>
         {/* <div id="profile-section">
