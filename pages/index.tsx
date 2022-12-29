@@ -30,32 +30,32 @@ export default function Home() {
           {/* <p id="megajon-logo">Megajon Media</p> */}
           <ul id="main-nav__icons">
             <li className="main-nav__icon">
-              <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA" target="_blank">
+              <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/yt_icon_rgb.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.instagram.com/megajonrules/" target="_blank">
+              <a href="https://www.instagram.com/megajonrules/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/Instagram_Glyph_Gradient.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.facebook.com/megajonrules/" target="_blank">
+              <a href="https://www.facebook.com/megajonrules/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/f_logo_RGB-Blue_1024.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://twitter.com/megajonrules" target="_blank">
+              <a href="https://twitter.com/megajonrules" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/2021+Twitter+logo+-+blue.png" />
               </a>
             </li>
             <li className="main-nav__icon">
-              <a href="https://www.linkedin.com/in/jonathan-seubert/" target="_blank">
+              <a href="https://www.linkedin.com/in/jonathan-seubert/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/linkedin.png" />
               </a>
             </li>
             <li id="github-icon" className="main-nav__icon">
-              <a href="https://github.com/megajon" target="_blank">
+              <a href="https://github.com/megajon" target="_blank" rel="noopener noreferrer">
                 <picture>
                   <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 768px)' />
                   <img srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
