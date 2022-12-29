@@ -57,7 +57,7 @@ export default function Home() {
             <li id="github-icon" className="main-nav__icon">
               <a href="https://github.com/megajon" target="_blank" rel="noopener noreferrer">
                 <picture>
-                  <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 768px)' />
+                  <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 1200px)' />
                   <img srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
                 </picture>
               </a>
