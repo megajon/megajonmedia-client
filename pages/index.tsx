@@ -7,6 +7,42 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const handleSubscribe = async (event) => {
+    event.preventDefault()
+
+    // const formData = {
+    //   email: event.target.unsubscribe.value,
+    // }
+
+    // const JSONData = JSON.stringify(formData)
+
+    const payload = new FormData(subscribeForm)
+    console.log("payload: ", [...payload])
+
+    const endpoint = 'http://localhost:4000/register'
+
+    const options = {
+      method: "POST",
+      body: payload,
+    }
+
+    const response = await fetch(endpoint, options)
+    const result = await response.json()
+    console.log("result: ", result.message)
+
+    if (result.message === "success") {
+      document.getElementById("subscribe-container").innerHTML = "Thanks for joining!!!"
+    }
+
+    if (result.message === "invalid email") {
+      document.getElementById("errorText").innerHTML = "Invalid email provided"
+    }
+
+    if (result.message === "database error") {
+      document.getElementById("errorText").innerHTML = "This email is already registered"
+    }
+  }
+
   // console.log(videoContent);
 
   // const toContent = () => {
@@ -68,6 +104,16 @@ export default function Home() {
               <img src="https://megajon-web.s3.amazonaws.com/icons/cv-icon-11.png" />
             </li> */}
           </ul>
+          <div id="subscribe-container" >
+            <form id="subscribeForm" onSubmit={handleSubscribe}>
+              <input type="text" id="email" name="email" className="email-input" />
+              <button type="submit" className="subscribe-button">subscribe</button>
+              <br></br>
+              <div id="error" className="subscribe-error">
+                <p id="errorText"></p>
+              </div>
+            </form>
+          </div>
           {/* <img id="megajon-icon"src="https://megajon-web.s3.amazonaws.com/images/js.jpeg" onClick={toProfile} /> */}
         </div>
         <div id="main-nav-backing"></div>
