@@ -19,7 +19,7 @@ export default function Home() {
     const payload = new FormData(subscribeForm)
     console.log("payload: ", [...payload])
 
-    const endpoint = 'http://localhost:4000/register'
+    const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
 
     const options = {
       method: "POST",
@@ -31,7 +31,7 @@ export default function Home() {
     console.log("result: ", result.message)
 
     if (result.message === "success") {
-      document.getElementById("subscribe-container").innerHTML = "Thanks for joining!!!"
+      document.getElementById("form-container").innerHTML = "Thanks for joining!!!"
     }
 
     if (result.message === "invalid email") {
@@ -104,16 +104,25 @@ export default function Home() {
               <img src="https://megajon-web.s3.amazonaws.com/icons/cv-icon-11.png" />
             </li> */}
           </ul>
-          <div id="subscribe-container" >
+          <div id="form-container">
             <form id="subscribeForm" onSubmit={handleSubscribe}>
+              <input type="text" id="email" name="email" placeholder='Enter email to subscribe'></input>
+              <button id="s-button">send</button>
+            </form>
+          </div>
+          <div id="error" className="subscribe-error">
+            <p id="errorText"></p>
+          </div>
+          {/* <div id="subscribe-container" >
+            <form id="subscribe-form" onSubmit={handleSubscribe}>
               <input type="text" id="email" name="email" className="email-input" />
-              <button type="submit" className="subscribe-button">subscribe</button>
+              <button type="submit" className="subscribe-button"><img id="subscribe-image" src="/paper_airplane.png"></img></button>
               <br></br>
               <div id="error" className="subscribe-error">
                 <p id="errorText"></p>
               </div>
             </form>
-          </div>
+          </div> */}
           {/* <img id="megajon-icon"src="https://megajon-web.s3.amazonaws.com/images/js.jpeg" onClick={toProfile} /> */}
         </div>
         <div id="main-nav-backing"></div>

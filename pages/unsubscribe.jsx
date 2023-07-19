@@ -11,7 +11,7 @@ export default function Unsubscribe({ emails }) {
     const payload = new FormData(unsubscribeForm)
     console.log("payload: ", [...payload])
 
-    const endpoint = 'http://localhost:4000/delete'
+    const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/delete'
 
     const options = {
       method: "POST",
@@ -23,7 +23,7 @@ export default function Unsubscribe({ emails }) {
     console.log("result: ", result.message)
 
     if (result.message === "email deleted") {
-      document.getElementById("form-container").innerHTML = "You've been unsubscribed"
+      document.getElementById("unsubscribe-container").innerHTML = "You've been unsubscribed"
     }
 
     if (result.message === "invalid email") {
