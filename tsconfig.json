@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/unsubscribe.jsx"
-  ],
+, "pages/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
