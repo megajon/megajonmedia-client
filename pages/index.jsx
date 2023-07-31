@@ -64,12 +64,12 @@ export default function Home() {
         <div id="main-nav">
           {/* <p id="megajon-logo">Megajon Media</p> */}
           
-          <div id="form-container">
-            <form id="subscribeForm" onSubmit={handleSubscribe}>
-              <input type="text" id="email" name="email" placeholder='Enter your email to join the ranks of Megajon'></input>
-              <button id="s-button">send</button>
-            </form>
-          </div>
+          
+          <form id="subscribeForm" onSubmit={handleSubscribe}>
+            <input type="text" id="email" name="email" placeholder='Enter your email to join the ranks of Megajon'></input>
+            <button id="s-button">send</button>
+          </form>
+          
           <div id="error" className="subscribe-error">
             <p id="errorText"></p>
           </div>
