@@ -63,7 +63,31 @@ export default function Home() {
       <main>
         <div id="main-nav">
           {/* <p id="megajon-logo">Megajon Media</p> */}
-          <ul id="main-nav__icons">
+          
+          <div id="form-container">
+            <form id="subscribeForm" onSubmit={handleSubscribe}>
+              <input type="text" id="email" name="email" placeholder='Enter email to subscribe'></input>
+              <button id="s-button">send</button>
+            </form>
+          </div>
+          <div id="error" className="subscribe-error">
+            <p id="errorText"></p>
+          </div>
+          {/* <div id="subscribe-container" >
+            <form id="subscribe-form" onSubmit={handleSubscribe}>
+              <input type="text" id="email" name="email" className="email-input" />
+              <button type="submit" className="subscribe-button"><img id="subscribe-image" src="/paper_airplane.png"></img></button>
+              <br></br>
+              <div id="error" className="subscribe-error">
+                <p id="errorText"></p>
+              </div>
+            </form>
+          </div> */}
+          {/* <img id="megajon-icon"src="https://megajon-web.s3.amazonaws.com/images/js.jpeg" onClick={toProfile} /> */}
+        </div>
+        <nav id="bottom-nav">
+          {/* <p id="megajon-logo">Megajon Media</p> */}
+          <ul id="bottom-nav__icons">
             <li className="main-nav__icon">
               <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/yt_icon_rgb.png" />
@@ -104,27 +128,7 @@ export default function Home() {
               <img src="https://megajon-web.s3.amazonaws.com/icons/cv-icon-11.png" />
             </li> */}
           </ul>
-          <div id="form-container">
-            <form id="subscribeForm" onSubmit={handleSubscribe}>
-              <input type="text" id="email" name="email" placeholder='Enter email to subscribe'></input>
-              <button id="s-button">send</button>
-            </form>
-          </div>
-          <div id="error" className="subscribe-error">
-            <p id="errorText"></p>
-          </div>
-          {/* <div id="subscribe-container" >
-            <form id="subscribe-form" onSubmit={handleSubscribe}>
-              <input type="text" id="email" name="email" className="email-input" />
-              <button type="submit" className="subscribe-button"><img id="subscribe-image" src="/paper_airplane.png"></img></button>
-              <br></br>
-              <div id="error" className="subscribe-error">
-                <p id="errorText"></p>
-              </div>
-            </form>
-          </div> */}
-          {/* <img id="megajon-icon"src="https://megajon-web.s3.amazonaws.com/images/js.jpeg" onClick={toProfile} /> */}
-        </div>
+        </nav>
         <div id="main-nav-backing"></div>
         <div id="main-content">
           <div className="comedy-set">
