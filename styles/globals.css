@@ -31,7 +31,7 @@
   #main-nav {
     position: fixed;
     width: 100%;
-    height: 36px;
+    height: 42px;
     background: rgb(30, 28, 28);
     color: white;
   }
@@ -168,7 +168,7 @@
   #email {
     position: relative;
     width: 80%;
-    height: 80%;
+    height: 66%;
     border: none;
     border-radius: 50px;
   }
@@ -176,7 +176,7 @@
   #s-button {
     position: relative;
     left: 1px;
-    height: 80%;
+    height: 70%;
     border: none;
     border-radius: 50px;
     color: white;
@@ -198,7 +198,10 @@
     border-radius: 50%;
   }
 
-  form {
+  #subscribeForm {
+    position: relative;
+    top: 6px;
+    left: 6px;
     display: inline;
   }
 
