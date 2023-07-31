@@ -21,7 +21,10 @@
   }
 
   ul {
-    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin-top: 8px;
     padding: 0;
   }
 
@@ -42,10 +45,10 @@
     color: white;
   }
 
-  #bottom-nav ul {
+  /* #bottom-nav ul {
     display: inline-block;
     text-align: center;
-  }
+  } */
 
   #bottom-nav__icons {
     /* width: 68%; */
@@ -71,13 +74,13 @@
     right: 0px;
   }
 
-  #bottom-nav ul li {
+  /* #bottom-nav ul li {
     display: inline-block;
     list-style: none;
     width: 4px;
     height: 4px;
     margin: 8px 24px;
-  }
+  } */
 
   #bottom-nav ul li img {
     height: 30px;
@@ -156,13 +159,11 @@
 
   #form-container {
     position: relative;
-    bottom:6px;
-    left: 8px;
-    display: inline-block;
     background-color: white;
     border-radius: 50px;
-    width: 195px;
-    height: 20px;
+    width: 96%;
+    margin: auto;
+    height: 25px;
   }
 
   #s-form {
@@ -174,7 +175,9 @@
   } */
 
   #email {
-    width: 150px;
+    position: relative;
+    width: 87.5%;
+    height: 94%;
     border: none;
     border-radius: 50px;
   }
@@ -182,7 +185,7 @@
   #s-button {
     position: relative;
     left: 1px;
-    height: 20px;
+    height: 100%;
     border: none;
     border-radius: 50px;
     color: white;

@@ -66,7 +66,7 @@ export default function Home() {
           
           <div id="form-container">
             <form id="subscribeForm" onSubmit={handleSubscribe}>
-              <input type="text" id="email" name="email" placeholder='Enter email to subscribe'></input>
+              <input type="text" id="email" name="email" placeholder='Enter your email to join the ranks of Megajon'></input>
               <button id="s-button">send</button>
             </form>
           </div>
@@ -87,33 +87,33 @@ export default function Home() {
         </div>
         <nav id="bottom-nav">
           {/* <p id="megajon-logo">Megajon Media</p> */}
-          <ul id="bottom-nav__icons">
-            <li className="main-nav__icon">
+          <ul>
+            <li>
               <a href="https://www.youtube.com/channel/UC95mpMl1TLK_0YnllQZphtA" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/yt_icon_rgb.png" />
               </a>
             </li>
-            <li className="main-nav__icon">
+            <li>
               <a href="https://www.instagram.com/megajonrules/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/Instagram_Glyph_Gradient.png" />
               </a>
             </li>
-            <li className="main-nav__icon">
+            <li>
               <a href="https://www.facebook.com/megajonrules/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/f_logo_RGB-Blue_1024.png" />
               </a>
             </li>
-            <li className="main-nav__icon">
+            <li>
               <a href="https://twitter.com/megajonrules" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/2021+Twitter+logo+-+blue.png" />
               </a>
             </li>
-            <li className="main-nav__icon">
+            <li>
               <a href="https://www.linkedin.com/in/jonathan-seubert/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/linkedin.png" />
               </a>
             </li>
-            <li id="github-icon" className="main-nav__icon">
+            <li>
               <a href="https://github.com/megajon" target="_blank" rel="noopener noreferrer">
                 <picture>
                   <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 1200px)' />
