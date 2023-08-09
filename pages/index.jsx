@@ -69,10 +69,7 @@ export default function Home() {
             <input type="text" id="email" name="email" placeholder='Enter your email to join the ranks of Megajon'></input>
             <button id="s-button">send</button>
           </form>
-          
-          <div id="error" className="subscribe-error">
-            <p id="errorText"></p>
-          </div>
+  
           {/* <div id="subscribe-container" >
             <form id="subscribe-form" onSubmit={handleSubscribe}>
               <input type="text" id="email" name="email" className="email-input" />
@@ -130,6 +127,9 @@ export default function Home() {
           </ul>
         </nav>
         <div id="main-nav-backing"></div>
+        <div id="error" className="subscribe-error">
+          <p id="errorText"></p>
+        </div>
         <div id="main-content">
           <div className="comedy-set">
             <video className="video"  poster="https://megajon-web.s3.amazonaws.com/images/trails_end_img.png" controls>
