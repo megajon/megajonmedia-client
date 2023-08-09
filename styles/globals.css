@@ -175,7 +175,7 @@
   
   #email {
     position: relative;
-    width: 88%;
+    width: fit-content;
     height: 100%;
     border: none;
     /* border-radius: 50px; */
@@ -184,6 +184,7 @@
   #s-button {
     position: relative;
     /* left: 1px; */
+    width: fit-content;
     height: 100%;
     border: none;
     /* border-radius: 50px; */
