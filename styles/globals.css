@@ -185,7 +185,8 @@
 
   #s-button {
     position: relative;
-    width: 18%;
+    left: 12px;
+    width: 10%;
     height: 100%;
     border: none;
     /* border-radius: 50px; */
