@@ -1,4 +1,9 @@
 @media only screen and (min-device-width: 320px) {
+
+  * {
+    box-sizing: border-box;
+  }
+  
   body {
     background-color: black;
     margin: 0;
@@ -185,8 +190,7 @@
 
   #s-button {
     position: relative;
-    left: 12px;
-    width: 10%;
+    width: 20%;
     height: 100%;
     border: none;
     /* border-radius: 50px; */
