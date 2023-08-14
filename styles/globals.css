@@ -186,7 +186,7 @@
     width: 80%;
     height: 100%;
     border: none;
-    /* border-radius: 50px; */
+    border-radius: 0;
   }
 
   #s-button {
