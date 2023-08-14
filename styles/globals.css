@@ -3,7 +3,7 @@
   * {
     box-sizing: border-box;
   }
-  
+
   body {
     background-color: black;
     margin: 0;
@@ -180,6 +180,7 @@
 
   
   #email {
+    -webkit-appearance: none;
     position: relative;
     /* width: fit-content; */
     width: 80%;
