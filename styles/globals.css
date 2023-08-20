@@ -159,7 +159,7 @@
   }
 
   #errorText {
-    color: red;
+    color: transparent;
     position: relative;
     margin-bottom: 10px;
   }
