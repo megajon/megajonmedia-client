@@ -28,19 +28,25 @@ export default function Home() {
 
     const response = await fetch(endpoint, options)
     const result = await response.json()
-    console.log("result: ", result.message)
 
     if (result.message === "success") {
-      document.getElementById("form-container").innerHTML = "Thanks for joining!!!"
+      document.getElementById("main-nav").innerHTML = "<h3 id='welcome-banner'>Thank you for joining!!!</h3>"
+      document.getElementById("error").classList.add("hidden")
     }
 
     if (result.message === "invalid email") {
       document.getElementById("errorText").innerHTML = "Invalid email provided"
+      document.getElementById("error").classList.remove("hidden")
     }
 
     if (result.message === "database error") {
       document.getElementById("errorText").innerHTML = "This email is already registered"
+      document.getElementById("error").classList.remove("hidden")
     }
+  }
+
+  const hideError = async (event) => {
+    document.getElementById("error").classList.add("hidden");
   }
 
   // console.log(videoContent);
@@ -68,7 +74,7 @@ export default function Home() {
           
           <form id="subscribeForm" onSubmit={handleSubscribe}>
             <input type="text" id="email" name="email" placeholder='Enter your email to join the ranks of Megajon'></input>
-            <button id="s-button">send</button>
+            <button id="s-button">join</button>
           </form>
   
           {/* <div id="subscribe-container" >
@@ -128,8 +134,9 @@ export default function Home() {
           </ul>
         </nav>
         <div id="main-nav-backing"></div>
-        <div id="error" className="subscribe-error">
+        <div id="error" className="subscribe-error hidden">
           <p id="errorText"></p>
+          <button id="close-button" onClick={hideError}>X</button>
         </div>
         <div id="main-content">
           <div className="comedy-set">

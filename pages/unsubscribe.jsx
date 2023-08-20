@@ -23,28 +23,29 @@ export default function Unsubscribe({ emails }) {
     console.log("result: ", result.message)
 
     if (result.message === "email deleted") {
-      document.getElementById("unsubscribe-container").innerHTML = "You've been unsubscribed"
+      document.getElementById("unsubscribe-container").innerHTML = "<h3 id='unsubscribe-message'>You've been unsubscribed</h3>"
     }
 
     if (result.message === "invalid email") {
       document.getElementById("errorText").innerHTML = "Invalid email provided"
+      document.getElementById("errorText").style.color = "red";
     }
 
     if (result.message === "no email found") {
       document.getElementById("errorText").innerHTML = "No email found"
+      document.getElementById("errorText").style.color = "red";
     }
   }
   return (
     <>
       <div id="unsubscribe-container">
+        <div id="unsubscribe-error">
+          <p id="errorText">error place holder</p>
+        </div>
         <form id="unsubscribeForm" onSubmit={handleUnsubscribe}>
-          <input type="text" id="email" name="email" className="email-input" email="true" />
+          <input type="text" id="unsubscribe-input" name="email" placeholder="Be a punk and leave the ranks of Megajon" email="true" />
           <br></br>
-          <button type="submit" className="unsubscribe-button">unsubscribe</button>
-          <br></br>
-          <div id="error" className="unsubscribe-error">
-            <p id="errorText"></p>
-          </div>
+          <button type="submit" id="unsubscribe-button">unsubscribe</button>
         </form>
       </div>
     </>
