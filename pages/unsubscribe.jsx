@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 export default function Unsubscribe({ emails }) {
   const handleUnsubscribe = async (event) => {
     event.preventDefault()
