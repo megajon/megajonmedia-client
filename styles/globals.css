@@ -158,6 +158,10 @@
     text-align: center;
   }
 
+  #subscribeError {
+    color: white;
+  }
+
   #errorText {
     color: transparent;
     position: relative;

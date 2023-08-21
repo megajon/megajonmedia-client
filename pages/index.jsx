@@ -35,7 +35,7 @@ export default function Home() {
     }
 
     if (result.message === "invalid email") {
-      document.getElementById("errorText").innerHTML = "Invalid email provided"
+      document.getElementById("subscribeError").innerHTML = "Invalid email provided"
       document.getElementById("error").classList.remove("hidden")
     }
 
@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <>
       <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Megajon Media</title>
       </Head>
       <main>
@@ -135,7 +135,7 @@ export default function Home() {
         </nav>
         <div id="main-nav-backing"></div>
         <div id="error" className="subscribe-error hidden">
-          <p id="errorText"></p>
+          <p id="subscribeError"></p>
           <button id="close-button" onClick={hideError}>X</button>
         </div>
         <div id="main-content">
