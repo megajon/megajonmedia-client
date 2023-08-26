@@ -40,7 +40,7 @@ export default function Home() {
     }
 
     if (result.message === "database error") {
-      document.getElementById("errorText").innerHTML = "This email is already registered"
+      document.getElementById("subscribeError").innerHTML = "This email is already registered"
       document.getElementById("error").classList.remove("hidden")
     }
   }
@@ -121,6 +121,7 @@ export default function Home() {
               <a href="https://github.com/megajon" target="_blank" rel="noopener noreferrer">
                 <picture>
                   <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 1200px)' />
+                  <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 768px)' />
                   <img srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
                 </picture>
               </a>
