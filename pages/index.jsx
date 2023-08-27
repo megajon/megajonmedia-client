@@ -152,12 +152,6 @@ export default function Home() {
             </video>
             <h3>Mommy Hoarder, Weird Uber Deliveries</h3>
           </div>
-          <div className="comedy-set">
-            <video className="video" poster="https://megajon-web.s3.amazonaws.com/images/east_side_1_img.png" controls>
-              <source src="https://megajon-web.s3.amazonaws.com/videos/Eastside+Bar+And+Grill+-+8-23-2022.m4v" type="video/mp4" />
-            </video>
-            <h3>Mommy Hoarder, Weird Uber Deliveries</h3>
-          </div>
         </div>
         {/* <div id="profile-section">
           <button onClick={toContent}>Content</button>
