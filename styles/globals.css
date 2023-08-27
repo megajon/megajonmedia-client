@@ -27,11 +27,12 @@
 
 
   #error {
-    position: fixed;
+    position: fixed !important;
     display: flex;
     justify-content: center;
     position: relative;
     background-color: red;
+    width: 100%;
     height: 24px;
     /* display: inline-block;
     left: 200px; */
