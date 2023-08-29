@@ -4,17 +4,10 @@ const EmailForm = () => {
 
     event.preventDefault()
 
-    // const formData = {
-    //   email: event.target.unsubscribe.value,
-    // }
-
-    // const JSONData = JSON.stringify(formData)
-
     const payload = new FormData(subscribeForm)
     console.log("payload: ", [...payload])
 
-    // const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
-    const endpoint = 'http://localhost:4000/register'
+    const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
 
     const options = {
       method: "POST",
