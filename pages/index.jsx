@@ -19,7 +19,8 @@ export default function Home() {
     const payload = new FormData(subscribeForm)
     console.log("payload: ", [...payload])
 
-    const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
+    // const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
+    const endpoint = 'http://localhost:4000/register'
 
     const options = {
       method: "POST",
