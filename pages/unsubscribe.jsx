@@ -4,12 +4,6 @@ export default function Unsubscribe({ emails }) {
   const handleUnsubscribe = async (event) => {
     event.preventDefault()
 
-    // const formData = {
-    //   email: event.target.unsubscribe.value,
-    // }
-
-    // const JSONData = JSON.stringify(formData)
-
     const payload = new FormData(unsubscribeForm)
     console.log("payload: ", [...payload])
 
@@ -41,10 +35,6 @@ export default function Unsubscribe({ emails }) {
   }
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Megajon Media</title>
-      </Head>
       <div id="unsubscribe-container">
         <div id="unsubscribe-error">
           <p id="errorText">error place holder</p>
@@ -58,14 +48,3 @@ export default function Unsubscribe({ emails }) {
     </>
   )
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch('http://localhost:4000/emails');
-//   const emails = await res.json();
-
-//   return {
-//     props: {
-//       emails,
-//     },
-//   }
-// }
