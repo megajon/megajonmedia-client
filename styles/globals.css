@@ -282,6 +282,10 @@
     left: 300px;
   }
 
+  #unsubscribe-message {
+    color: black;
+  }
+
   #email {
     width: 50%;
     height: 80%;
@@ -413,6 +417,10 @@
 
   .unsubscribe-error {
     color: red;
+  }
+
+  #unsubscribe-message {
+    color: black;
   }
 
   .email-input {
