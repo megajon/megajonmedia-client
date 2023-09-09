@@ -7,7 +7,8 @@ const EmailForm = () => {
     const payload = new FormData(subscribeForm)
     console.log("payload: ", [...payload])
 
-    const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
+    // const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/register'
+    const endpoint = process.env.NEXT_PUBLIC_SUBSCRIBE_URL
 
     const options = {
       method: "POST",
