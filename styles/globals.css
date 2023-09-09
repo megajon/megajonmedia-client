@@ -319,6 +319,10 @@
     margin: 0px auto;
   }
 
+  #welcome-banner {
+    color: #4CAF50;
+  }
+
   .comedy-set {
     color: black;
     background-color: #dfe3ee;;
