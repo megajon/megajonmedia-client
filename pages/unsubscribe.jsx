@@ -7,7 +7,6 @@ export default function Unsubscribe({ emails }) {
     const payload = new FormData(unsubscribeForm)
     console.log("payload: ", [...payload])
 
-    // const endpoint = 'https://warm-sands-26103-c971404aa7f0.herokuapp.com/delete'
     const endpoint = process.env.NEXT_PUBLIC_UNSUBSCRIBE_URL
 
     const options = {
