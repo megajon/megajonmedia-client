@@ -269,6 +269,7 @@
     width: 100%;
     height: 50px;
     background: #dfe3ee;
+    z-index: 1;
   }
 
   #main-nav-backing {
@@ -305,6 +306,7 @@
     height: 50px;
     background-color: #dfe3ee;
     color: white;
+    z-index: 1;
   }
 
   #bottom-nav ul {
@@ -313,7 +315,7 @@
   }
 
   #main-content {
-    z-index: -1;
+    /* z-index: -1; */
     position: relative;
     width: 80%;
     margin: 0px auto;
@@ -333,6 +335,7 @@
 
   #error {
     position: relative;
+    z-index: 1;
   }
 }
 
@@ -348,6 +351,7 @@
     background-color: #dfe3ee;
     width: 100%;
     height: 50px;
+    z-index: 1;
   }
 
   #bottom-nav {
@@ -357,6 +361,7 @@
     height: 50px;
     background: #dfe3ee;
     color: white;
+    z-index: 1;
   }
 
   #bottom-nav ul {
