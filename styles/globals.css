@@ -242,6 +242,21 @@
   .unsubscribe-error {
     color: white;
   }
+
+  #book-nav {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+
+  #book-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #date-time {
+    color: white;
+  }
 }
 
 @media only screen and (min-device-width: 768px) {
