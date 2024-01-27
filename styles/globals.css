@@ -243,19 +243,12 @@
     color: white;
   }
 
-  #book-nav {
-    display: flex;
-    justify-content: space-between;
-    color: white;
+  ::placeholder {
+    /* color: grey; */
   }
 
-  #book-details {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #date-time {
-    color: white;
+  .hidden {
+    display: none;
   }
 }
 

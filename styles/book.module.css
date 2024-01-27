@@ -1,3 +1,104 @@
-.test {
+.booknav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 6px 6px 40px 6px;
+}
+
+.cancel {
   color: red;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-color: #333030;
+  width: 90%;
+  height: 100px;
+}
+
+.details input {
+  background-color: transparent;
+  margin: 4px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.date {
+  background-color: #333030;
+  margin: 12px auto;
+  padding-top: 4px;
+  height: 90px;
+  width: 90%;
+}
+
+.date div {
+  margin: 4px;
+}
+
+.date label {
+  color: white;
+  margin: 2px;
+}
+
+.date button {
+  background-color: #516EE0;
+  color: white;
+  border-radius: 50px;
+  border: none;
+}
+
+.date hr {
+  width: 96%;
+}
+
+.date select {
+  width: 100%;
+  color: white;
+  background-color: #333030;
+  border: none;
+}
+
+.select {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #333030;
+  width: 90%;
+  margin: 8px auto;
+  padding: 2px 0px;
+  border: none;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  background-color: #333030;
+  width: 90%;
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  background-color: #333030;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  border: none;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+}
+
+.submit button {
+  border-radius: 50px;
+  background-color: #516EE0;
+  color: white;
+  border: none;
 }
