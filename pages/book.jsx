@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import styles from '../styles/book.module.css'
+import SelectDate from '../components/SelectDate';
+
 
 export default function BookMegajon() {
   // const feeSelector = document.getElementsByName('request_quote');
@@ -43,23 +45,45 @@ export default function BookMegajon() {
         <a className={styles.cancel}>Cancel</a>
       </div>
       <div className={styles.details}>
-        <input placeholder="Your name" />
-        <input placeholder="Venue" />
-        <input placeholder="Address" />
+        <input placeholder="Your Name" />
+        <input placeholder="Name of Venue" />
+        <input placeholder="City and State" />
       </div>
       <div className={styles.date}>
         <div>
           <label>Date</label>
-          <button>Jan 22, 2024</button>
+          <SelectDate />
+          {/* <button>Jan 22, 2024</button> */}
         </div>
-        <hr></hr>
+        {/* <hr></hr> */}
         <div>
-          <label>Start</label>
-          <button>7:00 PM</button>
-          <label>End</label>
-          <button>8:00 PM</button>
+          <label>Time</label>
+          <select default="7" className={styles.timeInputs}>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+          <symbol className={styles.symbol}>:</symbol>
+          <select id="minutes" className={styles.timeInputs}>
+            <option>00</option>
+            <option>15</option>
+            <option>30</option>
+            <option>45</option>
+          </select>
+          <select id="am_pm" className={styles.timeInputs}>
+            <option>PM</option>
+            <option>AM</option>
+          </select>
         </div>
-        <hr></hr>
       </div>
       <div className={styles.dropdowns}>
         <div>

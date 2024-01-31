@@ -250,6 +250,16 @@
   .hidden {
     display: none;
   }
+
+  .react-datepicker__input-container input {
+    background-color: #333030;
+    color: white;
+    text-align: center;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    padding: 0;
+  }
 }
 
 @media only screen and (min-device-width: 768px) {
