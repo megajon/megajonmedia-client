@@ -3,7 +3,7 @@ const MainContent = () => {
     <>
       <div id="main-content">
       <div className="comedy-set">
-          <video className="video"  height="327px" poster="big_willy_bulger_poster.png" controls>
+          <video className="video"  height="327px" poster="big_willy_bulger_poster.png" controls >
             <source src="https://megajon-web.s3.amazonaws.com/videos/big_willy_bulger_instagram.mp4" type="video/mp4" />
           </video>
           <h3>Big Willy Bulger</h3>

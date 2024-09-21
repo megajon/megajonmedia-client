@@ -19,22 +19,8 @@ const SocialMedia = () => {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/megajonrules" target="_blank" rel="noopener noreferrer">
-              <img src="https://megajon-web.s3.amazonaws.com/icons/2021+Twitter+logo+-+blue.png" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/jonathan-seubert/" target="_blank" rel="noopener noreferrer">
-              <img src="https://megajon-web.s3.amazonaws.com/icons/linkedin.png" />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/megajon" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 1200px)' />
-                <source srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-120px-plus.png" media='(min-width: 768px)' />
-                <img srcSet="https://megajon-web.s3.amazonaws.com/icons/GitHub-Mark-Light-64px.png" />
-              </picture>
+            <a href="https://www.facebook.com/megajonrules/" target="_blank" rel="noopener noreferrer">
+              <img src="https://megajon-web.s3.amazonaws.com/icons/TikTok_Icon_Black_Circle.png" />
             </a>
           </li>
         </ul>
