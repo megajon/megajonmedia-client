@@ -4,6 +4,7 @@
   }
 
   html, body, #__next {
+    background-color: black;
     margin: 0;
     height: 100%;
     display: flex;
