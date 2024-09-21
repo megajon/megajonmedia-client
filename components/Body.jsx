@@ -6,7 +6,7 @@ export default function Body() {
       </video>
       <div class="content">
         <img id="empty-mic" src="https://megajon-web.s3.amazonaws.com/images/StockCake-Spotlight+on+Microphone_1726722531.jpg" />
-        <a  id="book_button" href="mailto:megajon@megajon.com?subject=Test%20email&body=This is my body text%0AThis is another line"><button>Book Megajon</button></a>
+        <a  id="book_button" href="mailto:megajon@megajon.com?subject=Requesting%20Megajon%20A%20Performance&body=Your Name:%0AName of Venue:%0AAddress of Venue:%0ADate of Event:%0ATime of Event:%0AStage time:%0APropose Fee/Request Quote:%0AContact Info:%0AAdditional Notes:"><button>Book Megajon</button></a>
         <nav id="bottom-nav">
           <ul>
             <li>
