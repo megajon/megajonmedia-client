@@ -1,7 +1,7 @@
 export default function Body() {
   return (
     <>
-      <video controls autoPlay muted webkit-playsinline playsinline>
+      <video controls autoPlay muted playsInline>
         <source src="https://megajon-web.s3.amazonaws.com/videos/Portlandsfunniest.mp4" type="video/mp4" />
       </video>
       <div class="content">
