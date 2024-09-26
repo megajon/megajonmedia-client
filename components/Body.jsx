@@ -15,7 +15,7 @@ export default function Body() {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/megajonrules/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/megajoncomedy/" target="_blank" rel="noopener noreferrer">
                 <img src="https://megajon-web.s3.amazonaws.com/icons/Instagram_Glyph_Gradient.png" />
               </a>
             </li>
