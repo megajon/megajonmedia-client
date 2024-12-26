@@ -9,6 +9,7 @@ const SelectDate = () => {
     <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
+      name="date"
       // showTimeSelect
       // timeFormat="hh:mm"
       // timeIntervals={15}

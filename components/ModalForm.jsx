@@ -1,104 +1,218 @@
+'use client'
+import { useEffect } from 'react';
+import Script from 'next/script';
+import SelectDate from '../components/SelectDate';
+
+
 export default function ModalForm() {
-  function closeModal() {
-    console.log('clicked!')
-    const modal = document.getElementById('fullScreenModal');
-    modal.style.display = 'none';
+  
+  useEffect(() => {
+    let autocompleteName;
+    let autocompleteAddress;
+
+    function initAutocomplete() {
+      // Initialize the Google Places Autocomplete for the venue name input
+      autocompleteName = new google.maps.places.Autocomplete(
+        document.getElementById('venue_name'),
+        { types: ['establishment'] } // Limit to places like venues, businesses, etc.
+      );
+
+      // Add listener for place selection
+      autocompleteName.addListener('place_changed', fillInAddress);
+    }
+
+    function fillInAddress() {
+      // Get the place details from the autocomplete object for the venue name
+      const place = autocompleteName.getPlace();
+
+      // Get the address from the place details
+      const address = place.formatted_address;
+
+      // Fill the address field with the address
+      document.getElementById('venue_address').value = address || 'No address available';
+    }
+
+    // Initialize the autocomplete when the window loads
+    window.onload = initAutocomplete;
+
+    const paymentDropdown = document.getElementById('paymentDropdown');
+    const feeInput = document.getElementById('feeInput');
+
+    paymentDropdown.addEventListener('change', function() {
+      const currentOption = this.value;
+      console.log(currentOption)
+      if (currentOption === 'Proposing a fee') {
+        console.log("should show input")
+        feeInput.style.display = 'block';
+      } else {
+        feeInput.style.display = 'none';
+      }
+    })
+
+    const contactDropdown = document.getElementById('contactDropdown');
+    const contactInput = document.getElementById('contactinfo');
+
+    contactDropdown.addEventListener('change', function() {
+      const selectedOption = this.value;
+      console.log(selectedOption)
+      if (selectedOption === 'phone') {
+        contactInput.placeholder = 'Enter your phone number';
+        contactInput.style.display = 'block';
+      } else if (selectedOption === 'email') {
+        contactInput.placeholder = 'Enter your email address';
+        contactInput.style.display = 'block';
+      } else if (selectedOption === 'social') {
+        contactInput.placeholder = 'Enter your social media handle (e.g., @username)';
+        contactInput.style.display = 'block';
+      } else {
+        contactInput.style.display = 'none'; // Default placeholder
+      }
+    });
+  }, []);
+
+  //handleFormSubmit
+  const handleFormSubmission = async (event) => {
+    event.preventDefault()
+
+    const payload = new FormData(bookingForm)
+    console.log("payload: ", [...payload])
+
+    // const endpoint = process.env.NEXT_PUBLIC_LOCAL_URL;
+    const endpoint = "https://megajon-staging-0cbc4cff45fa.herokuapp.com/book"
+    console.log("endpoint: ", endpoint)
+
+    const options = {
+      method: "POST",
+      body: payload,
+    }
+
+    const response = await fetch(endpoint, options)
+    console.log("response: ", response)
+    const result = await response.json()
+
+    console.log("Response: ", response)
+    console.log("Result: ", result.message)
+    if (result.message === 'success') {
+      let successBanner = document.getElementById('successBanner')
+      let modalContainer = document.getElementById('modal-container')
+      const bookingForm = document.getElementById('bookingForm')
+      bookingForm.reset()
+      modalContainer.style.display = 'none'
+      successBanner.classList.add('successBanner')
+      successBanner.style.display = 'block'
+    }
   }
+
+  function closeModal() {
+    const modal = document.getElementById('fullScreenModal')
+    modal.style.display = 'none'
+  }
+
+  function closeBanner() {
+    const modal = document.getElementById('fullScreenModal')
+    let successBanner = document.getElementById('successBanner')
+    let modalContainer = document.getElementById('modal-container')
+    modal.style.display = 'none'
+    successBanner.style.display = 'none'
+    modalContainer.style.display = 'block'
+  }
+
   return(
     <>
       <div id="fullScreenModal" className="modal">
-        <div id="booking_header">
-          <button id="homeModalBtn" className="" onClick={closeModal}>Home</button>
-          <h2>Book Megajon</h2>
+        <div id="successBanner" className="">
+          <h1>Message Sent</h1>
+          <button id="closeBanner" className="" onClick={closeBanner}>close x</button>
+        </div>
+        <div id="modal-container">
+          <div id="booking_header">
+            {/* <button id="homeModalBtn" className="" onClick={closeModal}>Home</button> */}
+            <h2>Book Megajon</h2>
+            {/* <button id="closeModalBtn" className="" onClick={closeModal}>Cancel</button> */}
+          </div>
           <button id="closeModalBtn" className="" onClick={closeModal}>Cancel</button>
-        </div>
-        <div className="venue_details">
-          <input placeholder="Your Name" />
-          <input placeholder="Name of Venue" />
-          <input placeholder="City and State" />
-        </div>
-        <div>
-          <div>
-            <label>Date</label>
-            {/* <SelectDate /> */}
-            {/* <button>Jan 22, 2024</button> */}
-          </div>
-          {/* <hr></hr> */}
-          <div>
-            <label>Time</label>
-            <select default="7">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-            </select>
-            <symbol>:</symbol>
-            <select id="minutes">
-              <option>00</option>
-              <option>15</option>
-              <option>30</option>
-              <option>45</option>
-            </select>
-            <select id="am_pm">
-              <option>PM</option>
-              <option>AM</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <div>
-            <select name="stage_time">
-              <option value="default">Stage time</option>
-              <option value="ten">10 minutes</option>
-              <option value="fifteen">15 minutes</option>
-              <option value="thirty">30 minutes</option>
-              <option value="forty_five">45 minutes</option>
-              <option value="hour">1 hour</option>
-            </select>
-          </div>
-          <div>
-            <select id="request_quote">
-              <option value="request_quote">Request a quote</option>
-              <option value="propose_fee">Propose a fee</option>
-            </select>
-          </div>
-          <div id='fee_input' className='hidden'>
-            <input placeholder="Propose a fee" />
-          </div>
-    
-          <div>
-            <select id='contact'>
-              <option value="preferred">Preferred Contact Method</option>
-              <option value="phone">Phone</option>
-              <option value="email">Email</option>
-              <option value="social">Social Media</option>
-            </select>
-          </div>
-          <div id='phone' className='hidden'>
-            <input placeholder="Phone number" />
-          </div>
-          <div id='email_contact' className='hidden'>
-            <input placeholder="Email" />
-          </div>
-          <div id='social' className='hidden'>
-            <input placeholder="Social media link" />
-          </div>
-        </div>
-        <div>
-          <textarea placeholder="Notes" />
-        </div>
-        <div>
-          <button>Submit Request</button>
+          <form id="bookingForm" onSubmit={handleFormSubmission}>
+            <div className="venue_details">
+              <input id="requestorsName" className="venue-inputs" name="name" placeholder="Your Name" />
+              <input id="venue_name" className="venue-inputs" name="venue" placeholder="Name of Venue" />
+              <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
+              <div className="date-container">
+                <label>Date:</label>
+                <SelectDate name="date" />
+                {/* <div id="timeContainer"> */}
+              </div>
+              <div className='time-container'>
+                  <div className="time-drops">
+                    <label>Time:</label>
+                    <select default="7" name="hours">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                    <symbol>:</symbol>
+                    <select id="minutes" name="minutes">
+                      <option>00</option>
+                      <option>15</option>
+                      <option>30</option>
+                      <option>45</option>
+                    </select>
+                    <select id="am_pm" name="ampm">
+                      <option>PM</option>
+                      <option>AM</option>
+                    </select>
+                  </div>
+                {/* </div> */}
+              </div>
+              {/* <div id="dateContainer">
+                
+              </div> */}
+              
+            </div>
+            <div>
+              <div id="dropDowns">
+                <select name="stagetime">
+                  <option value="default">Stage time</option>
+                  <option value="10 Minutes">10 minutes</option>
+                  <option value="15 Minutes">15 minutes</option>
+                  <option value="30 Minutes">30 minutes</option>
+                  <option value="45 Minutes">45 minutes</option>
+                  <option value="1 Hour">1 hour</option>
+                </select>
+                <select id="paymentDropdown" name="quotefee">
+                  <option value="">Request a quote or Propose a fee</option>
+                  <option value="Requesting a quote">Requesting a quote</option>
+                  <option value="Proposing a fee">Proposing a fee</option>
+                </select>
+                <input id="feeInput" className="show-details" name="fee" placeholder="Propose a fee" />
+                <select id='contactDropdown' name="contactmethod">
+                  <option value="preferred">Preferred Contact Method</option>
+                  <option value="phone">Phone</option>
+                  <option value="email">Email</option>
+                  <option value="social">Social Media</option> 
+                </select>
+                <input id="contactinfo" className="show-details" name="contactinfo" placeholder="Phone number" />
+              </div>
+              
+            </div>
+            <div>
+              <textarea id="additional-details" placeholder="Additional details" name="details" />
+            </div>
+            <div>
+              <button id="submit-form" onSubmit={handleFormSubmission}>Submit Request</button>
+            </div>
+          </form>
         </div>
       </div>
+      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsCzg8XVmCuRDA4FcdonIijyaoXYelI58&libraries=places"></Script>
     </>
   )
 }
