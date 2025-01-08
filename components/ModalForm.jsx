@@ -163,7 +163,7 @@ export default function ModalForm() {
               <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
               <div className="date-container">
                 <label>Date:</label>
-                <SelectDate name="date" />
+                <SelectDate name="date" readonly />
               </div>
               <div className='time-container'>
                   <div className="time-drops">
