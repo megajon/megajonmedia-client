@@ -40,9 +40,7 @@ export default function ModalForm() {
 
     paymentDropdown.addEventListener('change', function() {
       const currentOption = this.value;
-      console.log(currentOption)
       if (currentOption === 'Proposing a fee') {
-        console.log("should show input")
         feeInput.style.display = 'block';
       } else {
         feeInput.style.display = 'none';
@@ -54,7 +52,6 @@ export default function ModalForm() {
 
     contactDropdown.addEventListener('change', function() {
       const selectedOption = this.value;
-      console.log(selectedOption)
       if (selectedOption === 'phone') {
         contactInput.placeholder = 'Enter your phone number';
         contactInput.style.display = 'block';
@@ -75,11 +72,8 @@ export default function ModalForm() {
     event.preventDefault()
 
     const payload = new FormData(bookingForm)
-    console.log("payload: ", [...payload])
 
-    // const endpoint = process.env.NEXT_PUBLIC_LOCAL_URL;
-    const endpoint = "https://megajon-staging-0cbc4cff45fa.herokuapp.com/book"
-    console.log("endpoint: ", endpoint)
+    const endpoint = process.env.NEXT_PUBLIC_LOCAL_URL;
 
     const options = {
       method: "POST",
@@ -87,11 +81,43 @@ export default function ModalForm() {
     }
 
     const response = await fetch(endpoint, options)
-    console.log("response: ", response)
     const result = await response.json()
+    let errorMessage = document.getElementById('error-message')
 
-    console.log("Response: ", response)
-    console.log("Result: ", result.message)
+    if (result.error === "Key: 'Booking.Name' Error:Field validation for 'Name' failed on the 'required' tag") {
+      errorMessage.innerHTML = 'Please enter a name'
+      document.getElementById("requestorsName").classList.add('formError')
+    }
+    if (result.error === "Key: 'Booking.Venue' Error:Field validation for 'Venue' failed on the 'required' tag") {
+      errorMessage.innerHTML = 'Please enter a venue name'
+      document.getElementById("venue_name").classList.add('formError')
+    }
+
+    if (result.error === "Key: 'Booking.Address' Error:Field validation for 'Address' failed on the 'required' tag") {
+      errorMessage.innerHTML = 'Please enter a venue address'
+      document.getElementById("venue_address").classList.add('formError')
+    }
+
+    if (result.error === "stagetime is default") {
+      errorMessage.innerHTML = 'Please select a stage time'
+      document.getElementById("stagetime").classList.add('formError')
+    }
+
+    if (result.error === "quotefee is default") {
+      errorMessage.innerHTML = 'Please select a quote or fee'
+      document.getElementById("paymentDropdown").classList.add('formError')
+    }
+
+    if (result.error === "contact is default") {
+      errorMessage.innerHTML = 'Please enter a contact method'
+      document.getElementById("contactDropdown").classList.add('formError')
+    }
+
+    if (result.error === "Key: 'Booking.ContactInfo' Error:Field validation for 'ContactInfo' failed on the 'required' tag") {
+      errorMessage.innerHTML = 'Please enter contact info'
+      document.getElementById("contactinfo").classList.add('formError')
+    }
+
     if (result.message === 'success') {
       let successBanner = document.getElementById('successBanner')
       let modalContainer = document.getElementById('modal-container')
@@ -126,20 +152,18 @@ export default function ModalForm() {
         </div>
         <div id="modal-container">
           <div id="booking_header">
-            {/* <button id="homeModalBtn" className="" onClick={closeModal}>Home</button> */}
             <h2>Book Megajon</h2>
-            {/* <button id="closeModalBtn" className="" onClick={closeModal}>Cancel</button> */}
           </div>
           <button id="closeModalBtn" className="" onClick={closeModal}>Cancel</button>
+          <div id="error-banner"><p id="error-message"></p></div>
           <form id="bookingForm" onSubmit={handleFormSubmission}>
             <div className="venue_details">
-              <input id="requestorsName" className="venue-inputs" name="name" placeholder="Your Name" />
+              <input id="requestorsName" className="venue-inputs" name="name" placeholder="Your Name" required />
               <input id="venue_name" className="venue-inputs" name="venue" placeholder="Name of Venue" />
               <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
               <div className="date-container">
                 <label>Date:</label>
                 <SelectDate name="date" />
-                {/* <div id="timeContainer"> */}
               </div>
               <div className='time-container'>
                   <div className="time-drops">
@@ -170,16 +194,12 @@ export default function ModalForm() {
                       <option>AM</option>
                     </select>
                   </div>
-                {/* </div> */}
               </div>
-              {/* <div id="dateContainer">
-                
-              </div> */}
               
             </div>
             <div>
               <div id="dropDowns">
-                <select name="stagetime">
+                <select id="stagetime" name="stagetime">
                   <option value="default">Stage time</option>
                   <option value="10 Minutes">10 minutes</option>
                   <option value="15 Minutes">15 minutes</option>
@@ -188,13 +208,13 @@ export default function ModalForm() {
                   <option value="1 Hour">1 hour</option>
                 </select>
                 <select id="paymentDropdown" name="quotefee">
-                  <option value="">Request a quote or Propose a fee</option>
+                  <option value="default">Request a quote or Propose a fee</option>
                   <option value="Requesting a quote">Requesting a quote</option>
                   <option value="Proposing a fee">Proposing a fee</option>
                 </select>
                 <input id="feeInput" className="show-details" name="fee" placeholder="Propose a fee" />
                 <select id='contactDropdown' name="contactmethod">
-                  <option value="preferred">Preferred Contact Method</option>
+                  <option value="default">Preferred Contact Method</option>
                   <option value="phone">Phone</option>
                   <option value="email">Email</option>
                   <option value="social">Social Media</option> 
@@ -212,7 +232,6 @@ export default function ModalForm() {
           </form>
         </div>
       </div>
-      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsCzg8XVmCuRDA4FcdonIijyaoXYelI58&libraries=places"></Script>
     </>
   )
 }

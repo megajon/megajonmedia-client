@@ -117,11 +117,6 @@
   #booking_header {
     text-align: center;
     margin-top: 20px;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto; */
   }
 
   #booking_header > * {
@@ -149,8 +144,6 @@
     border-bottom: 1px solid grey;
     margin: 5px 0px;
     padding: 8px 0px 8px 0px;
-    /* border-bottom: 1px solid white; */
-    /* border-radius: 20px; */
   }
 
   .venue-inputs:focus {
@@ -194,10 +187,7 @@
     right: 0px;
     background-color: grey;
     border: none;
-    /* margin: 5px 0px;
-    padding: 8px 0px 8px 10px; */
     border: 1px solid white;
-    /* border-radius: 20px; */
   }
 
   .date-container {
@@ -237,8 +227,6 @@
   right: 0px;
   background-color: rgba(0, 0, 0, 0.9);
   border: none;
-  /* margin: 5px 0px;
-  padding: 8px 0px 8px 10px; */
   border: 1px solid white;
   border-radius: 20px;
   }
@@ -247,7 +235,6 @@
     position: relative;
     left: 20px;
     background-color: rgba(0, 0, 0, 0.8);
-    /* background-color: grey; */
     border: none;
     border-bottom: 1px solid grey;
     margin: 0px;
@@ -258,9 +245,6 @@
   }
 
   #dropDowns {
-    /* display: flex;
-    flex-direction: column;
-    width: 90%; */
     display: flex;
     flex-direction: column;
     margin: 8px auto;
@@ -271,10 +255,8 @@
     width: 90%;
     border: none;
     border-bottom: 1px solid grey;
-    /* border-radius: 8px; */
     color: grey;
     background-color: rgba(0, 0, 0, 0.8);
-    /* background-color: rgba(105, 105, 105, 0.8); */
     margin: 4px 0px;
     padding: 8px 0px;
   }
@@ -334,6 +316,24 @@
     background-color: red;
     color: white;
   }
+
+  #error-banner {
+    height: 10px;
+  }
+
+  #error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .formError {
+    border: 1px solid red;
+  }
+
+  /* input:invalid {
+    border: 1px solid red;
+  } */
   
 }
 
@@ -347,98 +347,7 @@
     position: fixed;
     right: 80px;
   }
-  /* * {
-    box-sizing: border-box;
-  }
 
-  body {
-    background-color: whitesmoke;
-    margin: 0;
-  }
-
-  h3 {
-    position: relative;
-    top: 8px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  #main-nav {
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    background: #dfe3ee;
-    z-index: 1;
-  }
-
-  #main-nav-backing {
-    width: 100%;
-    height: 50px;
-  }
-
-  #subscribeForm {
-    position: relative;
-    top: 4px;
-    left: 300px;
-  }
-
-  #unsubscribe-message {
-    color: black;
-  }
-
-  #email {
-    width: 50%;
-    height: 80%;
-    border-radius: 50px;
-  }
-
-  #s-button {
-    width: 10%;
-    height: 80%;
-    border-radius: 50px;
-  }
-
-  #bottom-nav {
-    position: relateve;
-    top: 0px;
-    width: 28%;
-    height: 50px;
-    background-color: #dfe3ee;
-    color: white;
-    z-index: 1;
-  }
-
-  #bottom-nav ul {
-    position: relative;
-    top: 8px;
-  }
-
-  #main-content {
-    /* z-index: -1; */
-    /* position: relative;
-    width: 80%;
-    margin: 0px auto;
-  }
-
-  #welcome-banner {
-    color: #4CAF50;
-  }
-
-  .comedy-set {
-    color: black;
-    background-color: #dfe3ee;;
-    margin: 20px;
-    padding: 32px 0px 32px 0px;
-    border-radius: 2%;
-  }
-
-  #error {
-    position: relative;
-    z-index: 1;
-  } */
 }
 
 @media only screen and (min-device-width: 1100px) {
@@ -515,7 +424,6 @@
   #submit-form {
     background-color: blue;
     color: white;
-    /* padding: 10px 100px; */
     font-size: 42px;
     border: none;
     border-radius: 60px;

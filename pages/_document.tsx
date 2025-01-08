@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -10,7 +11,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsCzg8XVmCuRDA4FcdonIijyaoXYelI58&libraries=places"></script>
+        <script src={process.env.GOOGLE_URL}></script>
       </body>
     </Html>
   )
