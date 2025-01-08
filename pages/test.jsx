@@ -1,7 +1,7 @@
 export default function Page() {
   const myFunction = async () => {
     const formData = new FormData(formInput);
-    const response = await fetch("http://localhost:4000/test", {
+    const response = await fetch(process.env.TEST_URL, {
       method: "POST",
       body: formData,
     })
