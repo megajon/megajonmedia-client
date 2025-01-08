@@ -143,6 +143,10 @@ export default function ModalForm() {
     modalContainer.style.display = 'block'
   }
 
+  function handleDateChangeRaw(e) {
+    e.preventDefault()
+  }
+
   return(
     <>
       <div id="fullScreenModal" className="modal">
@@ -163,7 +167,8 @@ export default function ModalForm() {
               <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
               <div className="date-container">
                 <label>Date:</label>
-                <SelectDate name="date" customInput={<input readOnly />} />
+                <input type="date"></input>
+                <SelectDate id="date-picker" name="date" readOnly={true} />
               </div>
               <div className='time-container'>
                   <div className="time-drops">
