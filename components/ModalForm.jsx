@@ -73,7 +73,7 @@ export default function ModalForm() {
 
     const payload = new FormData(bookingForm)
 
-    const endpoint = process.env.NEXT_PUBLIC_LOCAL_URL;
+    const endpoint = process.env.NEXT_PUBLIC_LOCAL_URL
 
     const options = {
       method: "POST",
