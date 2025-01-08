@@ -1,16 +1,23 @@
+import React, { useState, useRef } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
 export default function Page() {
-  const myFunction = async () => {
-    const formData = new FormData(formInput);
-    const response = await fetch(process.env.TEST_URL, {
-      method: "POST",
-      body: formData,
-    })
-  }
+  const [startDate, setStartDate] = useState(new Date());
+  const inputRef = useRef(null);
+
+  const handleTouchStart = (e) => {
+    e.preventDefault();
+    inputRef.current.setFocus();
+  };
+
   return (
-    <form id="formInput" onSubmit={myFunction}>
-      <input type="text" name="name" />
-      <input type="submit" value="Submit" />
-      <p id="content"></p>
-    </form>
-  )
+    <div onTouchStart={handleTouchStart}>
+      <DatePicker
+        onChange={(date) => setStartDate(date)}
+        ref={inputRef}
+      />
+    </div>
+  );
 }
