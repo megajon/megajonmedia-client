@@ -103,7 +103,7 @@
 
   #closeModalBtn {
     position: fixed;
-    top: 28px;
+    top: 16px;
     right: 0px;
     background: none;
     color: red;
@@ -116,7 +116,7 @@
 
   #booking_header {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 8px;
   }
 
   #booking_header > * {
@@ -133,7 +133,7 @@
   .venue_details {
     display: flex;
     flex-direction: column;
-    margin: 0px auto 10px auto;
+    margin: 0px auto 0px auto;
     width: 90%;
   }
 
@@ -144,7 +144,7 @@
     border: none;
     border-bottom: 1px solid grey;
     margin: 5px 0px;
-    padding: 12px 6px;
+    padding: 8px 6px;
   }
 
   .venue-inputs:focus {
@@ -261,7 +261,7 @@
     /* background-color: rgba(0, 0, 0, 0.8); */
     background-color: rgba(169, 169, 169, 0.1);
     margin: 8px 0px;
-    padding: 8px 0px;
+    padding: 6px 0px;
   }
 
   .show-details {
@@ -323,12 +323,12 @@
   }
 
   #error-banner {
-    height: 10px;
+    /* height: 10px; */
   }
 
   #error-message {
     color: red;
-    margin-top: 10px;
+    margin: 0px;
     text-align: center;
   }
 
