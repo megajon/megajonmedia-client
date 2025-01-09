@@ -7,6 +7,9 @@ import SelectDate from '../components/SelectDate';
 export default function ModalForm() {
   
   useEffect(() => {
+    let inputFields = document.getElementsByTagName("input")
+    let datePicker = inputFields[3]
+    datePicker.setAttribute("readonly", "")
     let autocompleteName;
     let autocompleteAddress;
 
@@ -143,10 +146,6 @@ export default function ModalForm() {
     modalContainer.style.display = 'block'
   }
 
-  function handleDateChangeRaw(e) {
-    e.preventDefault()
-  }
-
   return(
     <>
       <div id="fullScreenModal" className="modal">
@@ -167,7 +166,6 @@ export default function ModalForm() {
               <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
               <div className="date-container">
                 <label>Date:</label>
-                <input type="date"></input>
                 <SelectDate id="date-picker" name="date" readOnly={true} />
               </div>
               <div className='time-container'>
