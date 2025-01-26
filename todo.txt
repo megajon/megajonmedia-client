@@ -1,14 +1,21 @@
-error banner
-remove red border after fixing validation error
-make dropdowns larger and look more clickable
-keep autocomplete from changing background color of inputs elements
-keep keyboard from opening when date picker is selected
-make time dropdowns bigger and look more clickable
-make main video run in a loop
-change success message when booking form is submitted
-add padding left to input elements
-add progress animation for submit button
-change styling of google autocomplete dropdowns
+- backburner
+# think I've fixed it
+
+- error banner
+- remove red border after fixing validation error
+- keep autocomplete from changing background color of input elements
+- figure out how to style date picker
+- make time dropdowns bigger and look more clickable
+# make main video run in a loop
+- change success message when booking form is submitted
+# add padding left to input elements
+- add progress animation for submit button
+- change styling of google autocomplete dropdowns
 remove automatic styling from form elements
-clear form when modal is closed with cancel button
-remove autocaps from inputs
+# clear form when modal is closed with cancel button
+# remove autocaps from inputs
+# figure out why staging client isn't getting response from api
+remove error and input highlights after form is submitted after error
+clear text input after changing drop down choice
+work on phone number front end validation
+keep video controls from dissappearing
