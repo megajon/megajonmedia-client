@@ -111,7 +111,7 @@ export default function ModalForm() {
     }
 
     if (result.error === "quotefee is default") {
-      errorMessage.innerHTML = 'Please select a quote or fee'
+      errorMessage.innerHTML = 'Please request a quote or propose a fee'
       document.getElementById("paymentDropdown").classList.add('formError')
       errorMessage.style.display = 'block'
     }
