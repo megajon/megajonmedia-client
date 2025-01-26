@@ -1,6 +1,5 @@
 'use client'
 import { useEffect } from 'react';
-import Script from 'next/script';
 import SelectDate from '../components/SelectDate';
 
 
@@ -62,7 +61,7 @@ export default function ModalForm() {
         contactInput.placeholder = 'Enter your email address';
         contactInput.style.display = 'block';
       } else if (selectedOption === 'social') {
-        contactInput.placeholder = 'Enter your social media handle (e.g., @username)';
+        contactInput.placeholder = 'Enter a social media handle (e.g., @username)';
         contactInput.style.display = 'block';
       } else {
         contactInput.style.display = 'none'; // Default placeholder
@@ -86,45 +85,54 @@ export default function ModalForm() {
     const response = await fetch(endpoint, options)
     const result = await response.json()
     let errorMessage = document.getElementById('error-message')
+    console.log(result.error)
 
     if (result.error === "Key: 'Booking.Name' Error:Field validation for 'Name' failed on the 'required' tag") {
       errorMessage.innerHTML = 'Please enter a name'
       document.getElementById("requestorsName").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
     if (result.error === "Key: 'Booking.Venue' Error:Field validation for 'Venue' failed on the 'required' tag") {
       errorMessage.innerHTML = 'Please enter a venue name'
       document.getElementById("venue_name").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.error === "Key: 'Booking.Address' Error:Field validation for 'Address' failed on the 'required' tag") {
       errorMessage.innerHTML = 'Please enter a venue address'
       document.getElementById("venue_address").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.error === "stagetime is default") {
       errorMessage.innerHTML = 'Please select a stage time'
       document.getElementById("stagetime").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.error === "quotefee is default") {
       errorMessage.innerHTML = 'Please select a quote or fee'
       document.getElementById("paymentDropdown").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.error === "contact is default") {
       errorMessage.innerHTML = 'Please enter a contact method'
       document.getElementById("contactDropdown").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.error === "Key: 'Booking.ContactInfo' Error:Field validation for 'ContactInfo' failed on the 'required' tag") {
       errorMessage.innerHTML = 'Please enter contact info'
       document.getElementById("contactinfo").classList.add('formError')
+      errorMessage.style.display = 'block'
     }
 
     if (result.message === 'success') {
       let successBanner = document.getElementById('successBanner')
       let modalContainer = document.getElementById('modal-container')
       const bookingForm = document.getElementById('bookingForm')
+      errorMessage.style.display = 'none'
       bookingForm.reset()
       modalContainer.style.display = 'none'
       successBanner.classList.add('successBanner')
@@ -135,6 +143,10 @@ export default function ModalForm() {
   function closeModal() {
     const modal = document.getElementById('fullScreenModal')
     modal.style.display = 'none'
+    const bookingForm = document.getElementById('bookingForm')
+    let errorMessage = document.getElementById('error-message')
+    errorMessage.style.display = 'none'
+    bookingForm.reset()
   }
 
   function closeBanner() {
@@ -150,7 +162,7 @@ export default function ModalForm() {
     <>
       <div id="fullScreenModal" className="modal">
         <div id="successBanner" className="">
-          <h1>Message Sent</h1>
+          <p>Megajon will be in touch soon!</p>
           <button id="closeBanner" className="" onClick={closeBanner}>close x</button>
         </div>
         <div id="modal-container">
@@ -159,11 +171,11 @@ export default function ModalForm() {
           </div>
           <button id="closeModalBtn" className="" onClick={closeModal}>Cancel</button>
           <div id="error-banner"><p id="error-message"></p></div>
-          <form id="bookingForm" onSubmit={handleFormSubmission}>
+          <form id="bookingForm" onSubmit={handleFormSubmission} autoComplete='off'>
             <div className="venue_details">
-              <input id="requestorsName" className="venue-inputs" name="name" placeholder="Your Name" required />
-              <input id="venue_name" className="venue-inputs" name="venue" placeholder="Name of Venue" />
-              <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" />
+              <input id="requestorsName" className="venue-inputs" name="venueName" placeholder="Your Name" required maxLength={200}/>
+              <input id="venue_name" className="venue-inputs" name="venue" placeholder="Name of Venue" required maxLength={200} />
+              <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" required maxLength={200} />
               <div className="date-container">
                 <label>Date:</label>
                 <SelectDate id="date-picker" name="date" readOnly={true} />
@@ -222,9 +234,8 @@ export default function ModalForm() {
                   <option value="email">Email</option>
                   <option value="social">Social Media</option> 
                 </select>
-                <input id="contactinfo" className="show-details" name="contactinfo" placeholder="Phone number" />
+                <input id="contactinfo" className="show-details" name="contactinfo" placeholder="Phone number" autoCapitalize='off'/>
               </div>
-              
             </div>
             <div>
               <textarea id="additional-details" placeholder="Additional details" name="details" />
