@@ -173,7 +173,7 @@ export default function ModalForm() {
           <div id="error-banner"><p id="error-message"></p></div>
           <form id="bookingForm" onSubmit={handleFormSubmission} autoComplete='off'>
             <div className="venue_details">
-              <input id="requestorsName" className="venue-inputs" name="venueName" placeholder="Your Name" required maxLength={200}/>
+              <input id="requestorsName" className="venue-inputs" name="name" placeholder="Your Name" required maxLength={200}/>
               <input id="venue_name" className="venue-inputs" name="venue" placeholder="Name of Venue" required maxLength={200} />
               <input id="venue_address" className="venue-inputs" name="address" placeholder="City and State" required maxLength={200} />
               <div className="date-container">

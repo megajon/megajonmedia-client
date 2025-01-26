@@ -17,5 +17,6 @@ remove automatic styling from form elements
 # figure out why staging client isn't getting response from api
 remove error and input highlights after form is submitted after error
 clear text input after changing drop down choice
+clear form after submission
 work on phone number front end validation
 keep video controls from dissappearing
