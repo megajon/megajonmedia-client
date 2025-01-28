@@ -103,7 +103,7 @@
 
   #closeModalBtn {
     position: fixed;
-    top: 16px;
+    top: 20px;
     right: 0px;
     background: none;
     color: red;
@@ -116,7 +116,7 @@
 
   #booking_header {
     text-align: center;
-    margin-top: 8px;
+    margin: 12px 0px;
   }
 
   #booking_header > * {
