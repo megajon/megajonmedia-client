@@ -205,13 +205,13 @@
   }
 
   .time-drops {
-    width: 60%;
+    width: 80%;
   }
 
   .time-drops select {
     position: relative;
     left: 16px;
-    padding: 3px;
+    padding: 4px;
     border: none;
     border-bottom: 1px solid grey;
     color: grey;
@@ -265,7 +265,7 @@
     /* background-color: rgba(0, 0, 0, 0.8); */
     background-color: rgba(169, 169, 169, 0.1);
     margin: 8px 0px;
-    padding: 6px 0px;
+    padding: 8px 0px;
   }
 
   .show-details {
