@@ -258,16 +258,30 @@
     align-items: center;
   }
 
+  /* select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="grey" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px;
+  } */
+
   #dropDowns select {
     appearance: none;
     width: 90%;
     border: none;
+    border-radius: 10px;
     border-bottom: 1px solid grey;
     color: grey;
     /* background-color: rgba(0, 0, 0, 0.8); */
     background-color: rgba(169, 169, 169, 0.1);
     margin: 8px 0px;
     padding:  6px 10px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="grey" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 24px;
   }
 
   .show-details {
