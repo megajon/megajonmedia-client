@@ -205,13 +205,13 @@
   }
 
   .time-drops {
-    width: 60%;
+    width: 80%;
   }
 
   .time-drops select {
     position: relative;
     left: 16px;
-    padding: 3px;
+    padding: 8px;
     border: none;
     border-bottom: 1px solid grey;
     color: grey;
