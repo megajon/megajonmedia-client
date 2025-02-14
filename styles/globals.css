@@ -212,13 +212,18 @@
     appearance: none;
     position: relative;
     left: 16px;
-    padding: 6px 10px;
+    padding: 6px 24px 6px 6px;
     border: none;
+    border-radius: 10px;
     border-bottom: 1px solid grey;
     color: grey;
     /* background-color: rgba(0, 0, 0, 0.8); */
     background-color: rgba(169, 169, 169, 0.1);
     margin: 4px 4px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="grey" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0px center;
+    background-size: 24px;
   }
 
   symbol {
@@ -249,6 +254,10 @@
     color: grey;
     text-align: center;
     width: 130px;
+  }
+
+  .timeSelect {
+    padding-right: 20px;
   }
 
   #dropDowns {
