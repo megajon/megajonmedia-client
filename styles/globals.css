@@ -130,6 +130,14 @@
     width: 40%;
   }
 
+  input {
+    font-size: 14px;
+  }
+
+  select {
+    font-size: 14px;
+  }
+
   .venue_details {
     display: flex;
     flex-direction: column;
@@ -145,7 +153,6 @@
     /* background-color: rgba(0, 0, 0, 0.9); */
     background-color: rgba(169, 169, 169, 0.1);
     color: grey;
-    font-size: 14px;
     border: none;
     border-bottom: 1px solid grey;
     margin: 5px 0px;
@@ -213,7 +220,7 @@
     appearance: none;
     position: relative;
     left: 16px;
-    padding: 6px 24px 6px 6px;
+    padding: 6px 32px 6px 6px;
     border: none;
     border-radius: 10px;
     border-bottom: 1px solid grey;
