@@ -258,6 +258,7 @@
   }
 
   #dropDowns select {
+    appearance: none;
     width: 90%;
     border: none;
     border-bottom: 1px solid grey;
