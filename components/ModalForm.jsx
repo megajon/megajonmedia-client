@@ -183,7 +183,7 @@ export default function ModalForm() {
               <div className='time-container'>
                   <div className="time-drops">
                     <label>Time:</label>
-                    <select default="7" name="hours">
+                    <select name="hours">
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -191,7 +191,7 @@ export default function ModalForm() {
                       <option>5</option>
                       <option>6</option>
                       <option>7</option>
-                      <option>8</option>
+                      <option default selected>8</option>
                       <option>9</option>
                       <option>10</option>
                       <option>11</option>
@@ -204,7 +204,7 @@ export default function ModalForm() {
                       <option>30</option>
                       <option>45</option>
                     </select>
-                    <select id="am_pm" name="ampm">
+                    <select id="am_pm" name="ampm" className="timeSelect">
                       <option>PM</option>
                       <option>AM</option>
                     </select>
@@ -213,7 +213,7 @@ export default function ModalForm() {
               
             </div>
             <div>
-              <div id="dropDowns">
+              <div id="dropDowns" className="select-wrapper">
                 <select id="stagetime" name="stagetime">
                   <option value="default">Stage time</option>
                   <option value="10 Minutes">10 minutes</option>
