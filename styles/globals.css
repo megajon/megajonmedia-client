@@ -209,6 +209,7 @@
   }
 
   .time-drops select {
+    appearance: none;
     position: relative;
     left: 16px;
     padding: 10px;
